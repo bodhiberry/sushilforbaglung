@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>परिचय | सुशील खड्का - Sushil Khadka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --main-blue: #003893;
+            --main-red: #DC241F;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            text-decoration: none;
+            color: var(--main-blue);
+        }
+
+        .logo-area h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        .logo-area span {
+            font-size: 0.9rem;
+            color: var(--main-red);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--main-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--main-red);
+        }
+
+        /* Hero Section (About Specific) */
+        .hero {
+            position: relative;
+            height: 40vh; /* Shorter for sub-pages */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .hero-content {
+            text-align: center;
+            background: rgba(0, 56, 147, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--main-red);
+        }
+
+        /* Vitae Content Section */
+        .vitae-container {
+            padding: 4rem 10%;
+            background: var(--white);
+        }
+
+        .vitae-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .profile-sidebar img {
+            width: 100%;
+            border-radius: 8px;
+            border: 5px solid var(--light-gray);
+        }
+
+        .vitae-details h2 {
+            color: var(--main-blue);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--main-red);
+            padding-left: 15px;
+        }
+
+        .vitae-details p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .milestones {
+            margin-top: 2rem;
+        }
+
+        .milestone-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light-gray);
+            border-radius: 5px;
+        }
+
+        .milestone-item strong {
+            color: var(--main-red);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--main-blue);
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--main-red);
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--main-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 10px; }
+            nav ul li { margin: 8px; }
+            .hero { height: 30vh; }
+            .vitae-grid { grid-template-columns: 1fr; }
+            .vitae-container { padding: 2rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <h1>सुशील खड्का</h1>
+            <span>बागलुङ क्षेत्र नं. १ बाट प्रतिनिधि सभा सदस्य</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="vitae.html">Vitae</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1500&q=80" alt="About Sushil Khadka" class="hero-img">
+        <div class="hero-content">
+            <h1>व्यक्तिगत विवरण</h1>
+            <p>यात्रा, शिक्षा र राजनीतिक यात्रा</p>
+        </div>
+    </section>
+
+    <section class="vitae-container">
+        <div class="vitae-grid">
+            <div class="profile-sidebar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Sushil Khadka Profile">
+                <div class="milestones">
+                    <div class="milestone-item">
+                        <strong>जन्म:</strong> मार्च १४, १९८६
+                    </div>
+                    <div class="milestone-item">
+                        <strong>शिक्षा:</strong> रासायनिक इन्जिनियरिङ र अर्थशास्त्र
+                    </div>
+                    <div class="milestone-item">
+                        <strong>पार्टी:</strong> राष्ट्रिय स्वतन्त्र पार्टी
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vitae-details">
+                <h2>जीवनी र पृष्ठभूमि</h2>
+                <p>
+                    सुशील खड्काको जन्म र बाल्यकाल बागलुङमा बितेको हो। उहाँले आफ्नो प्रारम्भिक शिक्षा बागलुङमै पुरा गरेपछि उच्च शिक्षाको लागि अमेरिका जानुभयो, जहाँ उहाँले रासायनिक इन्जिनियरिङ र अर्थशास्त्र जस्ता महत्वपूर्ण विषयहरूमा दक्षता हासिल गर्नुभयो।
+                </p>
+                
+                <h2>राजनीतिक यात्रा</h2>
+                <p>
+                    विदेशको सुखसुविधा र करियरलाई छोडेर स्वदेशमै केही गर्नुपर्छ भन्ने मान्यताका साथ उहाँ नेपाल फर्किनुभयो। २०८२ को निर्वाचनमा बागलुङ क्षेत्र नं. १ बाट प्रतिनिधि सभा सदस्यमा निर्वाचित हुनु उहाँको राजनीतिक जीवनको एक महत्वपूर्ण मोड हो। उहाँले 'परिवर्तन सम्भव छ' भन्ने नाराका साथ युवाहरूलाई राजनीतिमा आउन प्रेरित गर्दै आउनुभएको छ।
+                </p>
+
+                <h2>लक्ष्य र दृष्टिकोण</h2>
+                <p>
+                    उहाँको मुख्य प्राथमिकता बागलुङको पूर्वाधार विकास, पर्यटन प्रवर्द्धन र स्थानीय स्तरमा रोजगारी सिर्जना गर्नु हो। उहाँले रिसाइकलिङ र फोहोर व्यवस्थापनलाई उद्यमको रूपमा विकास गर्न विशेष योजनाहरू अगाडि सार्नुभएको छ।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>सम्पर्क विवरण</h3>
+                <p><i class="fas fa-map-marker-alt"></i> बागलुङ नगरपालिका–३, बागलुङ</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:9801844442">९८०१८४४४४२</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sushilforbaglung.com">info@sushilforbaglung.com</a></p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/skhadk"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; २०२६ सुशील खड्का। सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+</body>
+</html>
