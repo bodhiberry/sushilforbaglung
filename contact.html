@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सम्पर्क | सुशील खड्का - Sushil Khadka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --main-blue: #003893;
+            --main-red: #DC241F;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+            --border-gray: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation - EXACT SAME AS HOME */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            text-decoration: none;
+            color: var(--main-blue);
+        }
+
+        .logo-area h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        .logo-area span {
+            font-size: 0.9rem;
+            color: var(--main-red);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--main-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--main-red);
+        }
+
+        /* Hero Section - CONSISTENT FORMAT */
+        .hero {
+            position: relative;
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            text-align: center;
+            background: rgba(0, 56, 147, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--main-red);
+        }
+
+        /* Contact Page Content */
+        .contact-container {
+            padding: 4rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 5px solid var(--main-blue);
+        }
+
+        .contact-info-card h2 {
+            color: var(--main-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-method {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-method i {
+            color: var(--main-red);
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+
+        .contact-method div h4 {
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+
+        .contact-method div p, .contact-method div a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Form Styling */
+        .contact-form h2 {
+            margin-bottom: 1.5rem;
+            color: var(--main-blue);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--main-blue);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--main-red);
+        }
+
+        /* Footer - EXACT SAME AS HOME */
+        footer {
+            background: var(--main-blue);
+            color: white;
+            padding: 3rem 5% 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--main-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 10px; }
+            nav ul li { margin: 8px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-container { padding: 2rem 5%; }
+            .hero { height: 25vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <h1>सुशील खड्का</h1>
+            <span>बागलुङ क्षेत्र नं. १ बाट प्रतिनिधि सभा सदस्य</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="vitae.html">Vitae</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=1500&q=80" alt="Contact Sushil Khadka" class="hero-img">
+        <div class="hero-content">
+            <h1>सम्पर्क गर्नुहोस्</h1>
+            <p>तपाईंको सल्लाह र सुझाव हाम्रो लागि महत्वपूर्ण छ</p>
+        </div>
+    </section>
+
+    <section class="contact-container">
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h2>सम्पर्क ठेगाना</h2>
+                
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>कार्यालय</h4>
+                        <p>बागलुङ नगरपालिका–३, बागलुङ</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>फोन नम्बर</h4>
+                        <p><a href="tel:9801844442">९८०१८४४४४२</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>इमेल</h4>
+                        <p><a href="mailto:info@sushilforbaglung.com">info@sushilforbaglung.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>भेटघाटको समय</h4>
+                        <p>आइतबार - शुक्रबार: १०:०० - ५:००</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>सन्देश पठाउनुहोस्</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label>पुरा नाम</label>
+                        <input type="text" placeholder="तपाईंको नाम" required>
+                    </div>
+                    <div class="form-group">
+                        <label>इमेल ठेगाना</label>
+                        <input type="email" placeholder="तपाईंको इमेल" required>
+                    </div>
+                    <div class="form-group">
+                        <label>विषय</label>
+                        <input type="text" placeholder="सन्देशको विषय">
+                    </div>
+                    <div class="form-group">
+                        <label>सन्देश</label>
+                        <textarea rows="5" placeholder="यहाँ आफ्नो सन्देश लेख्नुहोस्..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">पठाउनुहोस्</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact-info">
+                <h3>सम्पर्क विवरण</h3>
+                <p><i class="fas fa-map-marker-alt"></i> बागलुङ नगरपालिका–३, बागलुङ</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:9801844442">९८०१८४४४४२</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sushilforbaglung.com">info@sushilforbaglung.com</a></p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/skhadk"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; २०२६ सुशील खड्का। सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+</body>
+</html>
