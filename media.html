@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मिडिया | सुशील खड्का - Sushil Khadka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --main-blue: #003893;
+            --main-red: #DC241F;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation - EXACT SAME AS HOME */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            text-decoration: none;
+            color: var(--main-blue);
+        }
+
+        .logo-area h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        .logo-area span {
+            font-size: 0.9rem;
+            color: var(--main-red);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--main-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--main-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            text-align: center;
+            background: rgba(0, 56, 147, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--main-red);
+        }
+
+        /* Media Gallery Content */
+        .media-container {
+            padding: 4rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--main-blue);
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--main-red);
+            margin: 10px auto;
+        }
+
+        /* Featured Video Section */
+        .featured-video {
+            margin-bottom: 4rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card-info {
+            padding: 1rem;
+        }
+
+        .video-card-info h4 {
+            color: var(--main-blue);
+            font-size: 1.1rem;
+        }
+
+        /* Footer - EXACT SAME AS HOME */
+        footer {
+            background: var(--main-blue);
+            color: white;
+            padding: 3rem 5% 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--main-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 10px; }
+            nav ul li { margin: 8px; }
+            .media-container { padding: 2rem 5%; }
+            .hero { height: 25vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <h1>सुशील खड्का</h1>
+            <span>बागलुङ क्षेत्र नं. १ बाट प्रतिनिधि सभा सदस्य</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="vitae.html">Vitae</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1500&q=80" alt="Media Coverage" class="hero-img">
+        <div class="hero-content">
+            <h1>अडियो र भिडियो</h1>
+            <p>हाम्रा गतिविधि र मिडिया कभरेज</p>
+        </div>
+    </section>
+
+    <main class="media-container">
+        <h2 class="section-title">मुख्य भिडियो</h2>
+        
+        <section class="featured-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top: 1rem; text-align: center;">
+                <h3>बागलुङको समृद्धिका लागि हाम्रो कार्ययोजना</h3>
+            </div>
+        </section>
+
+        <h2 class="section-title">अन्य अन्तर्वार्ता तथा रिपोर्टहरू</h2>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-info">
+                    <h4>संसदमा पहिलो सम्बोधन</h4>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-info">
+                    <h4>युवा र उद्यमशीलता विषयक छलफल</h4>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper" style="padding-bottom: 56.25%;">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-info">
+                    <h4>बागलुङ भ्रमण: स्थानीयसँग अन्तरक्रिया</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>सम्पर्क विवरण</h3>
+                <p><i class="fas fa-map-marker-alt"></i> बागलुङ नगरपालिका–३, बागलुङ</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:9801844442">९८०१८४४४४२</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sushilforbaglung.com">info@sushilforbaglung.com</a></p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/skhadk"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; २०२६ सुशील खड्का। सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+</body>
+</html>
