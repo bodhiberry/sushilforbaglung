@@ -93,4 +93,275 @@
         }
 
         .hero-img {
-            position: absolute
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+
+        .hero-content {
+            text-align: center;
+            background: rgba(0, 56, 147, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            border-bottom: 5px solid var(--main-red);
+        }
+
+        /* Papers Content Section */
+        .papers-container {
+            padding: 4rem 10%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .papers-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .paper-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .paper-card {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            border-left: 5px solid var(--main-blue);
+            padding: 1.5rem;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .paper-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .paper-info h3 {
+            color: var(--main-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .paper-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-tag {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--main-blue);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .view-link {
+            color: var(--main-red);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
+        .view-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer - EXACT SAME AS HOME */
+        footer {
+            background: var(--main-blue);
+            color: white;
+            padding: 3rem 5% 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--main-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 10px; }
+            nav ul li { margin: 8px; }
+            .papers-container { padding: 2rem 5%; }
+            .paper-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .view-link { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <h1>सुशील खड्का</h1>
+            <span>बागलुङ क्षेत्र नं. १ बाट प्रतिनिधि सभा सदस्य</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="vitae.html">Vitae</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="papers.html">Papers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1500&q=80" alt="Articles and Papers" class="hero-img">
+        <div class="hero-content">
+            <h1>लेख तथा जर्नलहरू</h1>
+            <p>नीति, अर्थतन्त्र र वातावरण सम्बन्धी विचार र अनुसन्धान</p>
+        </div>
+    </section>
+
+    <main class="papers-container">
+        <div class="papers-intro">
+            <p>यहाँ सुशील खड्काद्वारा लिखित र विभिन्न राष्ट्रिय तथा अन्तर्राष्ट्रिय जर्नल एवं पत्रपत्रिकाहरूमा प्रकाशित चुनिएका लेखहरू समावेश गरिएका छन्।</p>
+        </div>
+
+        <div class="paper-list">
+            <div class="paper-card">
+                <div class="paper-info">
+                    <span class="paper-tag">Economic Journal</span>
+                    <h3>नेपालको हरित अर्थतन्त्रमा चुनौती र अवसर</h3>
+                    <p>प्रकाशित मिति: जनवरी २०२५ | स्रोत: National Research Journal</p>
+                </div>
+                <a href="https://example.com/article1" target="_blank" class="view-link">
+                    पुरा पढ्नुहोस् <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <span class="paper-tag">Opinion Piece</span>
+                    <h3>संघीयता र स्थानीय विकास: बागलुङको सन्दर्भ</h3>
+                    <p>प्रकाशित मिति: नोभेम्बर २०२४ | स्रोत: Kantipur Daily</p>
+                </div>
+                <a href="https://example.com/article2" target="_blank" class="view-link">
+                    पुरा पढ्नुहोस् <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <span class="paper-tag">Policy Paper</span>
+                    <h3>वैज्ञानिक फोहोर व्यवस्थापन र उर्जा उत्पादन</h3>
+                    <p>प्रकाशित मिति: अगस्ट २०२४ | स्रोत: Environmental Science Review</p>
+                </div>
+                <a href="https://example.com/article3" target="_blank" class="view-link">
+                    पुरा पढ्नुहोस् <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <span class="paper-tag">Interview Summary</span>
+                    <h3>युवा नेतृत्व र समृद्ध नेपालको मार्गचित्र</h3>
+                    <p>प्रकाशित मिति: जुन २०२४ | स्रोत: The Rising Nepal</p>
+                </div>
+                <a href="https://example.com/article4" target="_blank" class="view-link">
+                    पुरा पढ्नुहोस् <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>सम्पर्क विवरण</h3>
+                <p><i class="fas fa-map-marker-alt"></i> बागलुङ नगरपालिका–३, बागलुङ</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:9801844442">९८०१८४४४४२</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sushilforbaglung.com">info@sushilforbaglung.com</a></p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/skhadk"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; २०२६ सुशील खड्का। सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+</body>
+</html>
